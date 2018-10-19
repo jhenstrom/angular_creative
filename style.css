@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'dnd'; /*a name to be used later*/
-    src: url('http://domain.com/fonts/font.ttf'); /*URL to font*/
-}
-
 img {
   width: 80px;
   height: 80px;
@@ -118,7 +113,7 @@ p {
 
 .centered {
   margin: 0 auto;
-  width:140px;
+  width:160px;
 }
 
 .centered_table{
@@ -139,6 +134,23 @@ p {
 table {
   background: url(http://18.224.57.114/angular_creative/img/parchment.jpg) no-repeat center center fixed; 
   border-radius: 5%;
+  border-collapse: collapse;
+}
+
+table td {
+  border: 5px solid black; 
+}
+table tr:first-child td {
+  border-top: 0;
+}
+table tr td:first-child {
+  border-left: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:last-child {
+  border-right: 0;
 }
 
 .character_header {
@@ -152,4 +164,19 @@ table {
 .character_header img {
   width:100px;
   height:100px;
+}
+
+.container_small {
+  display: flex;
+}
+
+.container_small > div {
+  flex: .1; /*grow*/
+  margin: 0 auto;
+  text-align:center;
+  font-weight:bold;
+}
+
+#refresh {
+    margin-left:950px;
 }

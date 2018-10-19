@@ -38,7 +38,7 @@ function($stateProvider, $urlRouterProvider) {
     var backstories = [];
     
     var barbarian = ["You grew up among tribal nomads, far from civilization and its comforts. You’ve hunted great herds, survived extreme weather, raided the trade of softer folk, and protected places sacred to your people. At times, you’ve enjoyed the solitude of being the only sentient creature for miles in any direction. Even in places where the terrain is new, you know the ways of the wild.",
-    "<strong>Wanderer:</strong> As a former barbarian nomad and raider, you have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers enough."];    
+    "As a former barbarian nomad and raider, you have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers enough."];    
     
     var bard = ["You have been the center of attention since before you could walk, and once you learned to sing and play, you never surrendered the spotlight again. And who deserves it more than you?",
     "You can always find a place to perform. You receive free lodging and food of a modest or comfortable standard as long as you perform each night. When strangers recognize you in a town where you have performed, they typically take a liking to you"];
@@ -54,16 +54,16 @@ function($stateProvider, $urlRouterProvider) {
     "You and your companions can receive aid at any site dedicated to the Triad or its member deities, especially Ilmater. You must provide any material components for spells cast on your behalf. Those who share your religion support you at a modest lifestyle."];
     
     var paladin =["You are an exile, unwelcome in both civilized society and the savage tribes of your parentage. Born after an orc raid, you were abandoned at a nearby temple and raised by the acolytes within. Despite the peaceful nature of their worship, your innate anger and resentment led you to the path of the war god.",
-    "<strong>Wanderer:</strong> You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."];
+    "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."];
     
     var ranger = ["You grew up in the wilds, far from civilization and the comforts of town and technology. The wilds are in your blood. Even in places where you don’t know the specific features of the terrain, you know the way of the wild.",
-    "<strong>Wanderer:</strong> You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."];
+    "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."];
     
     var rogue = ["The town of Phandalin is built on the ruins of an older settlement, vacant for five centuries until some hardy settlers set about rebuilding it some years back. Drawn by stories of gold and platinum in the nearby foothills, you came to Phandalin as well, not to earn a living, but to prey on those who struck it rich. You joined a gang calling itself the Redbrands and made some decent coin as a burglar, enforcer, or fence.",
 "But you must have made an enemy among your fellow Redbrands. Someone set you up. On that person’s word, the head of the Redbrands—a wizard called Glasstaff—tried to have you killed. You escaped, barely alive and thanking Tymora, the goddess of good fortune, for your luck. You fled Phandalin, almost penniless and with only the tools of your trade to your name."];
     
     var sorcerer = ["You grew up in the wilds, a fiercely proud member of a noble clan. The clan outweighs everything else in your life, even the stated law of the land.",
-    "<strong>Wanderer:</strong> You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."];
+    "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."];
     
     var warlock = ["Your path to power was not always so clear. You spent a great deal of time in seclusion, ruminating over whether or not it was worth it to continue, or to abandon your efforts and default on your debt.",
     "The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. Work with your DM to determine the details of your discovery and its impact on the campaign."];
@@ -160,6 +160,8 @@ function($stateProvider, $urlRouterProvider) {
 '$scope',
 function($scope)
 {
+    window.alert("Disclaimer:: The backstories and artwork are not my own. The sources were taken largely from concept art found on google and character profiles on http://dnd.wizards.com. All artistic credit for pictures and backstory goes to them");
+    
     $scope.move_to_selection = function()
     {
         console.log("heres");
@@ -203,15 +205,18 @@ function($scope, sharedProperties)
 function($scope, sharedProperties)
 {
     
-    window.location.reload()
+    //window.location.reload()
     console.log(sharedProperties.getProperty2().adventurers);
-    $scope.adventurers = sharedProperties.getProperty1().adventurers;
+    $scope.adventurers = sharedProperties.getProperty2().adventurers;
     $scope.adventurer1 = $scope.adventurers[0];
     $scope.adventurer2 = $scope.adventurers[1];
     $scope.adventurer3 = $scope.adventurers[2];
     $scope.adventurer4 = $scope.adventurers[3];
     
-    
+    $scope.go_home = function()
+    {
+        window.location.replace("http://18.224.57.114/angular_creative/index.html#/home");
+    }
   
   
 }]);
