@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'dnd'; /*a name to be used later*/
+    src: url('http://domain.com/fonts/font.ttf'); /*URL to font*/
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4 {
+  text-transform: capitalize;
+  color: lightgreen;
+  text-align:center;
+    font-family: Papyrus;
+  font-weight:bold;
+}
+
+h1
+{
+    color:lightblue;
+    font-size:500%;
+    text-align:center;
+      font-family: Papyrus;
+  font-weight:bold;
+}
+
+body { 
+  background: url(http://18.224.57.114/angular_creative/img/tavern.JPG) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.plus-sign {
+    font-size: 200%;
+    color:lightblue;
+}
+
+
+.main_div
+{
+  background-color:rgba(0, 0, 0, .4) ;
+  margin: 0 auto;
+  width: 1200px;
+  border-radius: 25px;
+  padding: 0px 0px 0px 0px;
+}
+
+.top_div
+{
+  margin: 0 auto;
+  text-align:center;
+  width: 1000px;
+  border-radius: 25px;
+  padding: 0px 50px 5px 50px;
+}
+
+.container {
+  display: flex;
+}
+
+.container > div {
+  flex: 1; /*grow*/
+}
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.bottom {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.top {
+  position: absolute;
+  top: 0px;
+  left: 8px;
+}
+
+.fader
+{
+  opacity:0;
+}
+
+.fader:hover{
+  opacity:0.5;
+}
+
+
+.wrapper {
+  position: absolute;
+  left: 30%;
+  margin-left: -50px;
+}
+
+p {
+  padding: 20px 0px 0px 0px;
+   width:500px;
+   text-align:center;
+   color:lightblue;
+  font-family: Papyrus;
+}
+
+.bubble {
+  width:550px;
+  height:180px;
+  left:-20px;
+  border-radius: 0%;
+}
+
+.centered {
+  margin: 0 auto;
+  width:140px;
+}
+
+.centered_table{
+  margin: 0 auto;
+  width:1000px;
+}
+
+#barmaid {
+  position: absolute;
+  left: 0%;
+  margin-top:150px;
+  margin-left: -50px;
+  width: 400px;
+  height: 700px;
+  border-radius: 0%;
+  
+}
+table {
+  background: url(http://18.224.57.114/angular_creative/img/parchment.jpg) no-repeat center center fixed; 
+  border-radius: 5%;
+}
+
+.character_header {
+  text-align:center;
+  text-transform: capitalize;
+  font-size:200%;
+  font-family: Papyrus;
+  font-weight:bold;
+}
+
+.character_header img {
+  width:100px;
+  height:100px;
+}

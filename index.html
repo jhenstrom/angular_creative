@@ -2,6 +2,7 @@
     <head>
         <title>Team Builder</title>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
         <script src="script.js"></script>
@@ -12,23 +13,105 @@
                 <ui-view></ui-view>
             </div>
         </div>
-       <script type="text/ng-template" id="/home.html">
-           <div class="page header">
-               <h1>Pick What Adventurers You want for your Game</h1>
-           </div>
+        <script type="text/ng-template" id="/home.html">
+            <img src="http://18.224.57.114/angular_creative/img/bartender.png" id="barmaid"/>
+            <div class="wrapper">
+               <div class="page header">
+                   <h1>Welcome!</h1>
+               </div>
+               
+               <form ng-submit="move_to_selection()">
+               <div class="text-bubble parent">
+                    <img src="http://18.224.57.114/angular_creative/img/text_bubble.png" class="bottom bubble"/>
+                    <p class="top"><t>Welcome! I'm Kate, the owner here. This here is The Jasper Otter, finest inn around. Here you can pick up adventurers to take on your very own journey. 
+                   Many different sorts stop by our establishment, so sit back and see who you can find. </p>
+               </div>
+                    <div class="centered">
+                        <button type="submit" id="go_pick" class="btn btn-success">Pick Adventurers</button>
+                    </div>
+               </form>
+             </div>
+        </script>
+       <script type="text/ng-template" id="/adventurers.html">
+           <div class="page header top_div">
+               <h1>Pick Four Adventurers You Want for Your Game</h1>
+           </div><br>
            
            <form ng-submit="start_adventure()">
-               <div ng-repeat="adventurer in adventurers">
-                   <span class="glyphicon glyphicon-thumbs-up" ng-click="add_adventurer(adventurer)"></span>
-                   <span>
-                        <img src={{adventurer.picture}} style="width: 50px; height: 50px;"/>
-                    </span><br>
-                    <span>
-                        {{adventurer.class}}
-                    </span>
-               </div>
-               <button type="submit" id="return_home">Start Adventurer</button>
+                <div class="main_div">
+                    <div class="container ">
+                        <div ng-repeat="adventurer in adventurers" class="parent">
+                            <span ng-click="add_adventurer(adventurer)">
+                                <img src={{adventurer.img}} class="bottom" />
+                                <img src="http://18.224.57.114/angular_creative/img/plus.png" class="top fader" />
+                            </span>
+                            <br>
+                            <h4>
+                                {{adventurer.role}}
+                            </h4>
+                       </div>
+                    </div>
+                    <button type="submit" id="start_adventure">Start Adventurer</button>
+                    <input type="button" value="Refresh Page" onClick="window.location.reload()">
+                    <div class="container">
+                        <div ng-repeat="adventurer in selected_adventurers">
+                            <span>
+                                <img src={{adventurer.img}} />
+                            </span><br>
+                            <h4>
+                                {{adventurer.role}}
+                            </h4>
+                        </div>
+                    </div>
+                <div>
            </form>
+        </script>
+        <script type="text/ng-template" id="/adventure.html">
+            <div class="page header top_div">
+               <h1>Here is your game!</h1>
+           </div><br>
+           <form ng-submit="start_adventure()">
+                <div ng-app="team_builder" ng-controller="adventure_Ctrl">
+                    <table class="centered_table">
+                        <tr>
+                            <td class="character_header">
+                                <span >{{adventurer1.role}}</span><span><img src={{adventurer1.img}} /></span>
+                            </td>
+                            <td class="character_header">
+                                <span>{{adventurer2.role}}</span><span><img src={{adventurer2.img}} /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="backstory">
+                                <span>
+                                    <div ng-repeat="paragraph in adventurer1.backstory">
+                                        <p>{{paragraph}}</p>
+                                    </div>
+                                </span>
+                            </td>
+                            <td>
+                                <span><p></p></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="character_header">
+                                <span class="table_role">{{adventurer3.role}}</span><span><img src={{adventurer3.img}} /></span>
+                            </td>
+                            <td class="character_header">
+                                <span class="table_role">{{adventurer4.role}}</span><span><img src={{adventurer4.img}} /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span><p></p></span>
+                            </td>
+                            <td>
+                                <span><p></p></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
         </script>
     </body>
 </html>
